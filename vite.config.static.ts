@@ -24,7 +24,7 @@ export default defineConfig({
     },
   },
   root: path.resolve(__dirname, "client"),
-  base: "/IconPackerGui/",
+  base: "/",
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,

@@ -10,7 +10,7 @@ Convert React Native icon packs to Aliucord-compatible vector icons (SVG/XML) wi
 - Client-side processing (no server required, works on static hosting)
 - Download converted icons as a ZIP file
 
-## Development
+## Development 
 
 ```bash
 # Install dependencies

@@ -236,7 +236,7 @@ export default function Home() {
               Aliucord Icon Converter
             </h1>
             <p className="text-muted-foreground max-w-2xl">
-              Upload an icon pack ZIP file to convert it into Aliucord-compatible 
+              Upload an iconpack ZIP file to convert it into Aliucord-compatible 
               vectors (SVG/XML).
             </p>
           </div>
@@ -298,12 +298,12 @@ export default function Home() {
             <div className="text-sm text-muted-foreground space-y-2">
               <p>Your ZIP should contain PNG icons with names like:</p>
               <code className="block p-3 rounded bg-black/30 text-xs">
-                Icon/native/redesign/generated/images/CallIcon.png<br/>
-                Icon/native/redesign/generated/images/SearchIcon.png<br/>
-                ...or any folder structure with *.png files
+                ../generated/images/CallIcon.png<br/>
+                ../generated/images/SearchIcon.png<br/>
+                or any folder structure with *.png files
               </code>
               <p className="mt-4">
-                Icons will be automatically converted to SVG/XML and renamed to Discord Kotlin format
+                Icons will be automatically converted to SVG/XML and renamed to KT's equivalent
                 (e.g., <code className="text-white">CallIcon.png</code> → <code className="text-white">ic_call_24dp.xml</code>)
               </p>
             </div>
@@ -311,7 +311,7 @@ export default function Home() {
 
           <div className="p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
             <p className="text-sm text-yellow-400">
-              This WebGUI is in active development, it is not guaranteed to work for now.
+              This tool is in active development, it is not guaranteed to work for the time being.
             </p>
           </div>
         </div>

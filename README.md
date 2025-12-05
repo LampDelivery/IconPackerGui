@@ -5,8 +5,6 @@ Convert icons to Aliucord-compatible vectors (SVG/XML)
 ## Usage
 
 - Upload ZIP files containing PNG icons
-- Automatic conversion to SVG and Android Vector XML formats
-- Smart name mapping to Discord Kotlin naming conventions
 - Download converted icons as a ZIP file
 
 ## Development 

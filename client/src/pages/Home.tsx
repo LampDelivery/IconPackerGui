@@ -236,8 +236,8 @@ export default function Home() {
               Aliucord Icon Converter
             </h1>
             <p className="text-muted-foreground max-w-2xl">
-              Upload a React Native icon pack ZIP file to convert it into Aliucord-compatible 
-              vector icons (SVG/XML) with proper Discord Kotlin naming.
+              Upload an icon pack ZIP file to convert it into Aliucord-compatible 
+              vectors (SVG/XML).
             </p>
           </div>
 
@@ -309,9 +309,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
-            <p className="text-sm text-green-400">
-              This app runs entirely in your browser. Your files are never uploaded to any server.
+          <div className="p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+            <p className="text-sm text-yellow-400">
+              This WebGUI is in active development, it is not guaranteed to work for now.
             </p>
           </div>
         </div>

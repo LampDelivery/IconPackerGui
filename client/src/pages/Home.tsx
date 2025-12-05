@@ -121,19 +121,23 @@ export default function Home() {
     setConverting(true);
 
     try {
-      const updatedIcons: DiscoveredIcon[] = [];
       let successCount = 0;
       let errorCount = 0;
+      const iconsCopy = [...session.icons];
 
-      for (const icon of session.icons) {
+      for (let i = 0; i < iconsCopy.length; i++) {
+        const icon = iconsCopy[i];
+        
         if (icon.status === "done") {
-          updatedIcons.push(icon);
           successCount++;
           continue;
         }
 
+        iconsCopy[i] = { ...icon, status: "processing" };
+        setSession((prev) => prev ? { ...prev, icons: [...iconsCopy] } : null);
+
         const convertedIcon = await convertIcon(icon);
-        updatedIcons.push(convertedIcon);
+        iconsCopy[i] = convertedIcon;
         
         if (convertedIcon.status === "done") {
           successCount++;
@@ -141,10 +145,8 @@ export default function Home() {
           errorCount++;
         }
 
-        setSession((prev) => prev ? { ...prev, icons: [...updatedIcons, ...session.icons.slice(updatedIcons.length)] } : null);
+        setSession((prev) => prev ? { ...prev, icons: [...iconsCopy] } : null);
       }
-
-      setSession((prev) => prev ? { ...prev, icons: updatedIcons } : null);
       
       toast({
         title: "Conversion Complete",

@@ -296,11 +296,11 @@ export default function Home() {
           <div className="p-6 rounded-xl bg-white/5 border border-white/10">
             <h3 className="font-semibold mb-3">Supported File Structure</h3>
             <div className="text-sm text-muted-foreground space-y-2">
-              <p>Your ZIP should contain PNG icons with names like:</p>
+              <p>Your ZIP should contain PNG icons:</p>
               <code className="block p-3 rounded bg-black/30 text-xs">
-                ../generated/images/CallIcon.png<br/>
-                ../generated/images/SearchIcon.png<br/>
-                or any folder structure with *.png files
+                ../images/CallIcon.png<br/>
+                ../images/SearchIcon.png<br/>
+                or any structure with *.png files
               </code>
               <p className="mt-4">
                 Icons will be automatically converted to SVG/XML and renamed to KT's equivalent
@@ -311,7 +311,7 @@ export default function Home() {
 
           <div className="p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
             <p className="text-sm text-yellow-400">
-              This tool is in active development, it is not guaranteed to work for the time being.
+              This tool is in active development, it may not function yet.
             </p>
           </div>
         </div>

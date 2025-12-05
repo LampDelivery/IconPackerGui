@@ -1,6 +1,6 @@
 # Aliucord Icon Converter 
 
-Convert React Native icon packs to Aliucord-compatible vector icons (SVG/XML)
+Convert icon packs to Aliucord-compatible vector icons (SVG/XML)
 
 ## Usage
 

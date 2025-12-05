@@ -1,6 +1,6 @@
 # Aliucord Icon Converter 
 
-Convert icon packs to Aliucord-compatible vector icons (SVG/XML)
+Convert icons to Aliucord-compatible vectors (SVG/XML)
 
 ## Usage
 

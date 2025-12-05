@@ -4,43 +4,42 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* OmegaSunkey Aliucord Theme Palette */
-  --color-background: #323430; /* Main Background */
-  --color-foreground: hsl(210 10% 90%); /* Keep light text */
+  --color-background: #2b3c28;
+  --color-foreground: #ebf5e9;
   
-  --color-card: #444A42; /* Secondary Background */
-  --color-card-foreground: hsl(210 10% 90%);
+  --color-card: #4da74c;
+  --color-card-foreground: #ebf5e9;
   
-  --color-popover: #444A42; /* Secondary Background */
-  --color-popover-foreground: hsl(210 10% 90%);
+  --color-popover: #659d62;
+  --color-popover-foreground: #ebf5e9;
   
-  --color-primary: #64A558; /* Accent Color */
-  --color-primary-foreground: hsl(0 0% 100%);
+  --color-primary: #21451f;
+  --color-primary-foreground: #ebf5e9;
   
-  --color-secondary: #444A42; /* Secondary Background */
-  --color-secondary-foreground: hsl(210 10% 90%);
+  --color-secondary: #c4e8bf;
+  --color-secondary-foreground: #2b3c28;
   
-  --color-muted: #444A42; /* Using secondary for muted areas too, or slightly lighter/darker if needed */
-  --color-muted-foreground: hsl(210 10% 70%);
+  --color-muted: #c5f4bd;
+  --color-muted-foreground: #2b3c28;
   
-  --color-accent: #64A558; /* Accent Color */
-  --color-accent-foreground: hsl(0 0% 100%);
+  --color-accent: #4da74c;
+  --color-accent-foreground: #ebf5e9;
   
   --color-destructive: hsl(359 85% 65%);
-  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-destructive-foreground: #ebf5e9;
 
-  --color-border: #2A2C28; /* Slightly darker than background for borders */
-  --color-input: #2A2C28;
-  --color-ring: #64A558;
+  --color-border: #21451f;
+  --color-input: #21451f;
+  --color-ring: #659d62;
 
-  --color-sidebar: #444A42; /* Secondary Background for Sidebar */
-  --color-sidebar-foreground: hsl(210 10% 90%);
-  --color-sidebar-primary: #64A558;
-  --color-sidebar-primary-foreground: hsl(0 0% 100%);
-  --color-sidebar-accent: #323430; /* Main background for contrast in sidebar */
-  --color-sidebar-accent-foreground: hsl(210 10% 90%);
-  --color-sidebar-border: #2A2C28;
-  --color-sidebar-ring: #64A558;
+  --color-sidebar: #343831;
+  --color-sidebar-foreground: #ebf5e9;
+  --color-sidebar-primary: #4da74c;
+  --color-sidebar-primary-foreground: #ebf5e9;
+  --color-sidebar-accent: #2b3c28;
+  --color-sidebar-accent-foreground: #ebf5e9;
+  --color-sidebar-border: #21451f;
+  --color-sidebar-ring: #659d62;
 
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -59,7 +58,7 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-color: #323430;
+    background-color: var(--color-background);
   }
 }
 
@@ -72,12 +71,10 @@
     @apply bg-card/95 border border-border/50;
   }
 
-  /* Keeping the "cyber" class names but styling them to match the new theme simply as "accented" borders */
   .cyber-border {
     @apply border border-border relative rounded-md overflow-hidden;
   }
   
-  /* Removed the corner accents for a cleaner Discord-like look, or made them subtle */
   .cyber-border::after {
     content: '';
     @apply absolute top-0 left-0 w-full h-[2px] bg-primary/50 opacity-0 transition-opacity;

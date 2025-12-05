@@ -47,6 +47,13 @@ export const RN_TO_KOTLIN_CROSSWALK: Record<string, MappingEntry> = {
   "ArrowRightIcon": { kotlinName: "ic_arrow_right_24dp", aliases: ["arrow_right", "forward"] },
   "ArrowDownIcon": { kotlinName: "ic_arrow_down_24dp", aliases: ["arrow_down"] },
   "ArrowUpIcon": { kotlinName: "ic_arrow_up_24dp", aliases: ["arrow_up"] },
+  "ArrowLargeLeftIcon": { kotlinName: "ic_arrow_large_left_24dp", aliases: ["arrow_large_left"] },
+  "ArrowLargeRightIcon": { kotlinName: "ic_arrow_large_right_24dp", aliases: ["arrow_large_right"] },
+  "ArrowLargeDownIcon": { kotlinName: "ic_arrow_large_down_24dp", aliases: ["arrow_large_down"] },
+  "ArrowSmallLeftIcon": { kotlinName: "ic_arrow_small_left_24dp", aliases: ["arrow_small_left"] },
+  "ArrowSmallRightIcon": { kotlinName: "ic_arrow_small_right_24dp", aliases: ["arrow_small_right"] },
+  "ArrowSmallDownIcon": { kotlinName: "ic_arrow_small_down_24dp", aliases: ["arrow_small_down"] },
+  "ArrowSmallUpIcon": { kotlinName: "ic_arrow_small_up_24dp", aliases: ["arrow_small_up"] },
   "CheckIcon": { kotlinName: "ic_check_24dp", aliases: ["check", "done"] },
   "InfoIcon": { kotlinName: "ic_info_24dp", aliases: ["info", "information"] },
   "WarningIcon": { kotlinName: "ic_warning_24dp", aliases: ["warning", "alert"] },
@@ -77,6 +84,7 @@ export const RN_TO_KOTLIN_CROSSWALK: Record<string, MappingEntry> = {
   "ScreenShareIcon": { kotlinName: "ic_screen_share_24dp", aliases: ["screen_share", "screenshare"] },
   "StreamIcon": { kotlinName: "ic_stream_24dp", aliases: ["stream", "live"] },
   "ActivityIcon": { kotlinName: "ic_activity_24dp", aliases: ["activity", "game"] },
+  "ActivitiesIcon": { kotlinName: "ic_activities_24dp", aliases: ["activities"] },
   "StatusIcon": { kotlinName: "ic_status_24dp", aliases: ["status"] },
   "OnlineIcon": { kotlinName: "ic_online_24dp", aliases: ["online", "green"] },
   "OfflineIcon": { kotlinName: "ic_offline_24dp", aliases: ["offline", "gray"] },
@@ -160,6 +168,17 @@ export const RN_TO_KOTLIN_CROSSWALK: Record<string, MappingEntry> = {
   "MaskIcon": { kotlinName: "ic_mask_24dp", aliases: ["mask", "hide"] },
   "VisibleIcon": { kotlinName: "ic_visible_24dp", aliases: ["visible", "show", "eye"] },
   "HiddenIcon": { kotlinName: "ic_hidden_24dp", aliases: ["hidden", "invisible", "eye_off"] },
+  "NotificationsIcon": { kotlinName: "ic_notifications_24dp", aliases: ["notifications"] },
+  "AccessibilityIcon": { kotlinName: "ic_accessibility_24dp", aliases: ["accessibility"] },
+  "AchievementsIcon": { kotlinName: "ic_achievements_24dp", aliases: ["achievements", "trophy"] },
+  "AnalyticsIcon": { kotlinName: "ic_analytics_24dp", aliases: ["analytics", "chart"] },
+  "AnnouncementsIcon": { kotlinName: "ic_announcements_24dp", aliases: ["announcements", "megaphone"] },
+  "AnnouncementsLockIcon": { kotlinName: "ic_announcements_lock_24dp", aliases: ["announcements_lock"] },
+  "AnnouncementsWarningIcon": { kotlinName: "ic_announcements_warning_24dp", aliases: ["announcements_warning"] },
+  "AppsIcon": { kotlinName: "ic_apps_24dp", aliases: ["apps", "grid"] },
+  "ArrowAngleLeftUpIcon": { kotlinName: "ic_arrow_angle_left_up_24dp", aliases: ["arrow_angle_left_up"] },
+  "ArrowAngleRightUpIcon": { kotlinName: "ic_arrow_angle_right_up_24dp", aliases: ["arrow_angle_right_up"] },
+  "ArrowsUpDownIcon": { kotlinName: "ic_arrows_up_down_24dp", aliases: ["arrows_up_down", "sort"] },
 };
 
 export function suggestKotlinName(rnIconName: string): string {
@@ -176,9 +195,16 @@ export function suggestKotlinName(rnIconName: string): string {
   
   const lowerClean = cleanName.toLowerCase();
   for (const [key, entry] of Object.entries(RN_TO_KOTLIN_CROSSWALK)) {
-    if (key.toLowerCase().replace("icon", "") === lowerClean) {
+    const keyLower = key.toLowerCase().replace("icon", "");
+    if (keyLower === lowerClean) {
       return entry.kotlinName;
     }
+    if (entry.aliases?.some((a) => lowerClean === a || a === lowerClean)) {
+      return entry.kotlinName;
+    }
+  }
+  
+  for (const [key, entry] of Object.entries(RN_TO_KOTLIN_CROSSWALK)) {
     if (entry.aliases?.some((a) => lowerClean.includes(a) || a.includes(lowerClean))) {
       return entry.kotlinName;
     }

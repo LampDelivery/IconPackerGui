@@ -128,7 +128,32 @@ The build process:
 - All API routes are prefixed with `/api`
 - Temporary files are stored in `/tmp/` and cleaned up after sessions
 
+## GitHub Pages Deployment
+
+The app now supports client-side-only processing and can be deployed to GitHub Pages:
+
+### Setup
+1. Push to a GitHub repository
+2. Go to Settings > Pages
+3. Under "Build and deployment", select "GitHub Actions"
+4. Push to `main` branch - the workflow at `.github/workflows/deploy-pages.yml` handles deployment
+
+### Build Commands
+- `npm run build:static` - Build static site for GitHub Pages (outputs to `dist/`)
+- Uses `vite.config.static.ts` with relative base path
+
+### Client-Side Processing
+The app now processes everything in the browser:
+- JSZip for ZIP extraction
+- ImageTracer.js for PNG to SVG conversion
+- No server required - all processing happens locally
+
 ## Recent Changes
+- **2024-12-05**: Added GitHub Pages support
+  - Migrated to client-side-only processing using JSZip and ImageTracer.js
+  - Added GitHub Actions workflow for automatic deployment
+  - Added `build:static` script for static site builds
+  - Updated README with deployment instructions
 - **2024-12-05**: Complete rewrite for ZIP upload workflow
   - Replaced Themes+ API fetching with local ZIP upload
   - Added server-side PNG to SVG conversion
